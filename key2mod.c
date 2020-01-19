@@ -126,6 +126,10 @@ int main( int argc, char* argv[] ){
 			return 0; /* return if not child process */
 	}
 	
+	/* wait to prevent the last keypress from launching being 
+	 * detected */
+	sleep(1);
+	
 	/* open /dev/input/event* */
 	if( ( eventfd = open(eventfile, O_RDONLY) ) == -1 ){
 		printf("Error: couldn't open %s\n", eventfile);
@@ -177,7 +181,7 @@ int main( int argc, char* argv[] ){
 		close(1); /* stdout */
 		close(2); /* stderr */
 	}
-	
+
 	/* input event */
 	struct input_event event;
 	
