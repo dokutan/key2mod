@@ -1,5 +1,5 @@
 # key2mod
-Use a normal key as a modifier, e.g. Space acts as Control when pressed with a second key but as Space when pressed alone.
+Use a normal key as a modifier, e.g. Space acts as Control when pressed with a second key, but as Space when pressed alone.
 
 ## Installing
 - Make sure you have [libevdev](https://www.freedesktop.org/software/libevdev/doc/latest/index.html) installed 
