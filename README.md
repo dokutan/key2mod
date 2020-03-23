@@ -22,4 +22,6 @@ key2mod -e /dev/input/event0 -k KEY_SPACE -m KEY_LEFTCTRL -f
 When receiving SIGINT or SIGTERM cleanup is performed and the program exits.
 
 ## How it works and limitations
-This program reads all events coming from the keyboard, all events that are not <key> pressed are passed through to uinput. When <key> pressed is received, it waits for either any other key to be pressed or <key> to be released, to send the appropriate events to uinput. This means that pressing the used key alone will generate the event at the release, which makes this unsuitable for games or other applications where timing is important. Also when trying to input a combination like shift+ctrl+key the normal modifier needs to be pressed first as otherwise the comnbination of modifiers and the key will be send separately.
+This program reads all events coming from the keyboard, all events that are not ``<key> pressed`` are passed through to uinput. When ``<key> pressed`` is received, it waits for either any other key to be pressed or ``<key>`` to be released, to send the appropriate events to uinput.
+
+This means that pressing the used key alone will generate the event at the release, which makes this unsuitable for games or other applications where timing is important. Also when trying to input a combination like shift+ctrl+key the normal modifier needs to be pressed first as otherwise the combination of modifiers and the key will be send separately.
