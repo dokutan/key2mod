@@ -1,13 +1,13 @@
 # key2mod
-Use a normal key as a modifier, e.g. Space acts as Control when pressed with a second key, but as Space when pressed alone.
+Use a normal key as a modifier, e.g. Space acts as Control when pressed with a second key, but as Space when pressed alone. Tested on Linux, might work on *BSD if libevdev is available.
 
 ## Installing
-- Make sure you have [libevdev](https://www.freedesktop.org/software/libevdev/doc/latest/index.html) installed 
-- Clone this repository and build with
+- Make sure you have [libevdev](https://www.freedesktop.org/software/libevdev/doc/latest/index.html) installed, on certain distros (e.g. Ubuntu) a dev package is required
+- Clone this repository, build and install with
 ```
-gcc key2mod.c -o key2mod -Wall `pkg-config --cflags --libs libevdev`
+make
+sudo make install
 ```
-- Copy the resulting binary to a directory in your $PATH, like /usr/bin/
 
 ## Usage
 Access to /dev/input/* and /dev/uinput is required, this can be achieved by running this as root. Basic usage:
